@@ -1,0 +1,297 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+html{ 
+  background: url('bg-image.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body {
+  font-size: 10px;
+  font-family: Roboto, sans-serif;  
+  margin: 0;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+
+.c-checkbox {
+  display: none;
+}
+
+.c-checkbox:checked+.c-formContainer .c-form {
+  width: 37.5em;
+}
+
+.c-checkbox:checked+.c-formContainer .c-form__toggle {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+.c-checkbox:checked+.c-formContainer .c-form__input,
+.c-checkbox:checked+.c-formContainer .c-form__buttonLabel {
+  transition: 0.2s 0.1s;
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* .c-checkbox:not(:checked)+.c-formContainer .c-form__input:required:valid ~ .c-form__toggle::before, */
+/* .c-checkbox:checked + .c-formContainer .c-form__input:required:valid~.c-form__toggle::before { */
+  /* content: 'Thank You! \1F60A'; */
+/* } */
+
+.c-checkbox:not(:checked)+.c-formContainer .c-form__input:required:valid ~ .c-form__toggle {
+  pointer-events: none;
+  cursor: default;
+}
+
+.c-formContainer,
+.c-form,
+.c-form__toggle {
+  width: 20em;
+  height: 6.25em;
+}
+
+.c-formContainer {
+  position: relative;
+  font-weight: 700;
+}
+
+.c-form,
+.c-form__toggle {
+  position: absolute;
+  border-radius: 6.25em;
+  background-color: #fff;
+  transition: 0.2s;
+}
+
+.c-form {
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.625em;
+  box-sizing: border-box;
+  box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+}
+
+.c-form__toggle {
+  color: #1A98B4;
+  top: 0;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-form__toggle::before {
+  font-size: 1.75em;
+  content: attr(data-title);
+}
+
+.c-form__input,
+.c-form__button {
+  font: inherit;
+  border: 0;
+  outline: 0;
+  border-radius: 5em;
+  box-sizing: border-box;
+}
+
+.c-form__input,
+.c-form__buttonLabel {
+  font-size: 1.75em;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.7);
+  transition: 0s;
+}
+
+.c-form__input {
+  color: #daf2f7;
+  height: 100%;
+  width: 100%;
+  padding: 0 0.714em;
+}
+
+.c-form__input::placeholder {
+  color: currentColor;
+}
+
+.c-form__input:required:valid {
+  color: #1A98B4;
+}
+
+.c-form__input:required:valid+.c-form__buttonLabel {
+  color: #fff;
+}
+
+.c-form__input:required:valid+.c-form__buttonLabel::before {
+  pointer-events: initial;
+}
+
+.c-form__buttonLabel {
+  color: #daf2f7;
+  height: 100%;
+  width: auto;
+}
+
+.c-form__buttonLabel::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.c-form__button {
+  color: inherit;
+  padding: 0;
+  height: 100%;
+  width: 3em;
+  background-color: #1A98B4
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Card Styles Start */
+.col{
+	/* background-color:red; */
+	width:350px;
+	height:374px;
+	font-size: 1rem;
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1.5em;
+}
+
+.card-profile {
+    margin-top: 30px;
+    text-align: center;
+}
+.card {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    color: rgba(0, 0, 0, 0.87);
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+a {
+    color: #9c27b0;
+    text-decoration: none;
+}
+
+
+
+.card-profile .card-avatar, .card-testimonial .card-avatar {
+    max-width: 130px;
+    max-height: 130px;
+    margin: -50px auto 0;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.card-caption {
+	margin: 0;
+    font-weight: 700;
+    font-family: "Roboto Slab", "Times New Roman", serif;
+}
+.card-caption, .card-caption a {
+    color: #333;
+    text-decoration: none;
+}
+h4, .h4 {
+    font-size: 1.3em;
+    line-height: 1.55em;
+}
+
+.table {
+    margin-bottom: 0px;
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.card .table {
+    padding: 15px 30px;
+}
+
+
+p {
+    color: #3C4857;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+/* Card Styles End */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+body{	
+	margin-top: 50;
+	overflow-y: hidden;
+}
+
+.c-checkbox:checked+.c-formContainer .c-form {
+    width: 30em;
+}
+
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}
