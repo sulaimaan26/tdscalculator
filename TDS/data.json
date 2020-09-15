@@ -1,0 +1,30 @@
+{
+
+"_data":[
+	{
+		"id":1,
+		"img":"image/Excellent.jpg",
+		"message":"Excellent",
+		"description":"Acceptable for drinking. The TDS level is ideal for areas where the water polluted by sewage or industrial waste",
+		"range":"50-150",
+		"height":"130px"
+	},
+	{
+		"id":2,
+		"img":"image/good.png",
+		"message":"Good",
+		"description":"Good. The water is ideal for people with cardiovascular disease",
+		"range":"50-150",
+		"height":"130px"
+	},
+	{
+		"id":3,
+		"img":"image/danger.jpg",
+		"message":"Unacceptable",
+		"description":"Water is not acceptable for drinking.",
+		"range":"50-150",
+		"height":"130px"
+	}
+]
+
+}

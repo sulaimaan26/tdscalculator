@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keyword" content="">
+  
+<script src="https://kit.fontawesome.com/cd83301c2e.js" crossorigin="anonymous"></script> 
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <title>TDS Calculator | Test your water</title>  
+</head>
+
+<body>
+
+<div id="form-section">	
+	<input class="c-checkbox" type="checkbox" id="checkbox">
+	<div class="c-formContainer">
+		<form class="c-form" action="">
+			<input class="c-form__input fontAwesome"  placeholder="Enter TDS value" id="tdsvalue" type="number" onkeypress="return isNumber(event)" pattern="\d*" maxlength="4"
+			oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+			required>
+			<!-- <label class="c-form__buttonLabel" for=""> -->
+				
+			<!-- </label> -->
+			<button class="c-form__buttonLabel c-form__button" id="gettds" onclick="getTDS()" type="button"><i class="fas fa-calculator"></i></button>
+			<label class="c-form__toggle" for="checkbox" data-title="Test Your Water"></label>
+		</form>
+	</div>
+</div>
+
+<div class="col" id="card-section" style="display: none;">
+		<div class="card card-profile">
+			<div class="card-avatar">
+			<!-- style="height: 130px;"  -->
+				<a href="#"> <img class="img" id="icon" src="image/danger.jpg"> </a>
+			</div>
+			<div class="table">
+				<h4 class="card-caption" id="message">Bad</h4>
+				<p class="card-description" id="description"> Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is... </p>
+			</div>
+		<div>
+</div>
+
+</body>
+
+<script>
+function isNumber(evt) {	
+	<!-- if(evt.key >2){ -->
+		<!-- return false; -->
+	<!-- } -->
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+
+
+</script>
+<script src="main.js" ></script>
+</html>
